@@ -1,0 +1,66 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.html';
+require 'PHPMailer/src/PHPMailer.html';
+require 'PHPMailer/src/SMTP.html';
+
+
+
+if(isset($_POST['submit'])){
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+	$comment=$_POST['comment'];
+
+    if(!isset($name) || empty($name)){
+        $error[]= "Name is required";
+    }
+    if(!isset($email) || empty($email)){
+        $error[]= "Email is required";
+    }
+    if(!isset($comment) || empty($comment)){
+        $error[]= "Comment is required";
+    }
+    if(!isset($error) || empty($error)){
+    $to = "dadsmom2018@gmail.com";
+    $headers="From : " . $email;
+
+    $mail= new PHPMailer();
+    //Server settings
+    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'dadsmom2018@gmail.com';                 // SMTP username
+    $mail->Password = 'upass97024@#';                           // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                                    // TCP port to connect to
+
+    //Recipients
+    $mail->setFrom($email, 'Dadsmom Website');
+    $mail->addAddress('dadsmom2018@gmail.com', 'Gmail User');     // Add a recipient
+    /*$mail->addAddress('ellen@example.com');               // Name is optional
+    $mail->addReplyTo('info@example.com', 'Information');
+    $mail->addCC('cc@example.com');
+    $mail->addBCC('bcc@example.com');*/
+
+    //Attachments
+    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+   // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Message from website';
+    $mail->Body    = $comment;
+
+    if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+    } else {
+    echo 'Message has been sent';
+    }
+}
+}
+?>

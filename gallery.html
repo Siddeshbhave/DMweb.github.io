@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>DADSMOM Website</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="animate.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css">
+  <link href="twentyywenty1/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty1/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<!--links for enterprises-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #183A5B;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 5px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 10px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+padding-bottom: 20px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  }
+
+/*.navbar {
+  width: 100%;
+    background-color: black;
+      color: #ffffff;  overflow: auto;
+min-height: 80px;
+scroll-behavior: smooth;
+}
+
+.navbar a {
+  float: left;
+  padding: 30px;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}*/
+
+
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+  .search {
+   float: left;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+    margin-left: 450px;
+    font-size: 17px;
+    width: 40%;
+}
+
+.btngo {
+  float: right;
+    width: 5%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    margin-right: 170px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 50%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 15px;
+    /*width: 20%;*/
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+    margin-top: -50px;
+}
+
+/*#Home {background-color: brown;}
+#News {background-color: brown;}
+#Contact {background-color: brown;}
+#About {background-color: brown;}
+#gall {background-color: brown;}*/
+p{
+  color: black;
+}
+
+h3{
+  color: black;
+}
+
+a{
+  color: black;
+}
+.navbar-fixed-top{
+    min-height: 70px;
+
+}
+.navbar-collapse{
+    padding-top: 3px;
+}
+
+nav.navbar ul li > ul {
+  background:#B0BEC5;
+  box-shadow: none;
+}
+
+.navbar-right
+{
+  float: right!important;
+  padding-right: 20px;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+h5{
+  font-size: 13px;
+}
+
+
+.card-img-top
+{
+  object-fit: contain;
+ height: 300px;
+  width:auto;
+}
+
+.card-img-top
+{
+  object-fit: contain;
+ height: 300px;
+  width:auto;
+}
+
+.btn
+{
+  margin-left: 100px;
+  margin-bottom: 7px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.openBtn:hover {
+    background: #bbb;
+}
+
+
+.button {
+  border-radius: 4px;
+  background-color: ;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  margin-left: 90px;
+}
+
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+  h5 {
+
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+ }
+
+.image {
+
+      object-fit: contain;
+
+
+}
+
+.card-img-top
+{
+  object-fit: contain;
+ height: 300px;
+  width:auto;
+}
+
+.btn
+{
+  margin-left: 100px;
+  margin-bottom: 7px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.openBtn {
+    background: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.openBtn:hover {
+    background: #bbb;
+}
+
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*ul.submenu {
+    display: none;
+}
+
+li:hover ul.submenu {
+    display: block;
+}*/
+
+.dropdown-childmenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-childmenu {
+    display: none;
+    /*position: absolute;*/
+    /*min-width: 160%;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 15%;
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .tablink{
+   width: 100%;
+   margin-left: -24%;
+    }
+
+  }
+
+</style>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"></div>
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="banner/D1.png" height="70" width="70" class="logo" alt=""></a>
+            </div>
+
+             <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+                     <li><a href="index.html#offerings"><span><h5><i class="glyphicon glyphicon-user"></i></span><strong>&nbspCONSUMER SERVICES</strong></h5></a></li>
+                     <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>CONSUMER SERVICES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#offerings">TODAY'S SPECIAL OFFERS</a></li>
+
+        <li class="dropdown-submenu">
+        <a  tabindex="-1" href="#">OTHER OFFERS<span class="caret"></span></a>
+        <ul class="dropdown-childmenu">
+                            <li><a href="grocerytab.html">GROCERY</a></li>
+                            <li><a href="homemadetab.html">HOME-MADE</a></li>
+                            <li><a href="tickettab.html">TICKETING</a></li>
+                            <li><a href="paymenttab.html">PAYMENTS</a></li>
+                            <li><a href="couriertab.html">COURIER</a></li>
+                            <li><a href="topuptab.html">TOP-UP</a></li>
+                        </ul>
+                      </li>
+            </ul>
+<script>
+  $('.dropdown ul li').hover(function() {
+  $(this).children('ul').stop(true,false,true).slideToggle(300);});
+</script>
+
+                      <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> -->
+                   <li><a href="merchantnew.html"><span><h5><i class="glyphicon glyphicon-globe"></i></span><strong>&nbspNETWORK</strong></h5></a></li>
+
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><i class="glyphicon glyphicon-briefcase"></i><strong>&nbspBUSINESSES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enterprisesbusiness.html">ENTERPRISES</a></li>
+                            <li><a href="selfemployment.html">SELF-EMPLOYMENT</a></li>
+                            <li><a href="retailertab.html#retailer">RETAILERS</a></li>
+                            <li><a href="homebasedtab.html">HOME-BASED</a></li>
+                            <li><a href="wholesalertab.html">WHOLESALER</a></li>
+                            <li><a href="servicetab.html">SERVICE PROVIDERS</a></li>
+                            <li><a href="banktab.html">BANKING & FINANCIAL SERVICES</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-pencil"></i></span><b>&nbspSIGN-UP</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-log-in"></i></span><b>&nbspLOG-IN</b></h5></a>
+                    </li>
+                     <li>
+                    <a class="dropdown-toggle" href="gallery.html"><h5><span><i class="glyphicon glyphicon-picture"></i></span><b>&nbspGALLERY</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="navigation.html"><h5><span><i class="glyphicon glyphicon-envelope"></i></span><b>&nbspCONNECT</b></h5></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown">
+                  <h5><span><i class="glyphicon glyphicon-menu-hamburger"></i></span><strong>&nbspCORPORATE</strong></h5></a>
+                  <ul class="dropdown-menu">
+                             <li><a href="aboutus.html#history">HISTORY</a></li>
+                            <li><a href="aboutus.html#platform">PLATFORM</a></li>
+                            <li><a href="aboutus.html#objectives">OBJECTIVES</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-dark bg-dark">
+                    <li>
+                    <a class="dropdown-toggle" onclick="goBack()"><h5><span><i class="glyphicon glyphicon-arrow-left" style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="index.html"><h5><span><i class="glyphicon glyphicon-home" style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="navigation.html"><h5><span><i class="glyphicon glyphicon-arrow-right" style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" onclick="openSearch()"><h5><span><i class="glyphicon glyphicon-search" style="color: orange"></i></span><b></b></h5></a>
+                    <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay" style="color:white" >×</span>
+  <div class="overlay-content">
+    <form action="/action_page.html">
+      <input type="text" placeholder="Search.." name="search" style="color: black">
+      <button type="submit" style="background-color: grey"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+                    </li>
+                </ul>
+
+            </div>
+
+    </nav>
+
+<br>
+
+<h3 style="margin-top: 50px;"></h3>
+<div class="container" style="margin-left: 28%">
+<button class="tablink" style="text-align: left;" onclick="openPage('Home', this, '#183A5B')" id="defaultOpen">ARTS</button>
+<button class="tablink" style="text-align: left;" onclick="openPage('News', this, '#183A5B')" >GARMENTS</button>
+<button class="tablink" style="text-align: left;" onclick="openPage('Contact', this, '#183A5B')">GIFT ITEMS</button>
+<button class="tablink" style="text-align: left;" onclick="openPage('About', this, '#183A5B')">FOOD</button>
+<button class="tablink" style="text-align: left;" onclick="openPage('gall', this, '#183A5B')">SPECIALITY</button>
+</div>
+
+<div id="Home" class="tabcontent"><!--ARTS-->
+
+
+<div class="card-deck">
+  <div class="column">
+    <div class="card-body">
+      <!-- <a href="practice.html"> -->
+ <a href="art/art1.png"><img class ="card-img-top img-responsive" src="art/art1.png" style="width:100%" "height:100%"></a>
+    <p class="card text-center" style="color: Black">Art 1</p>
+        <p class="card text-center">Price:800/-</p>
+        <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+ </div>
+
+
+  <div class="column">
+    <div class="card-body">
+ <a href="art/art2.png"><span><img class ="card-img-top img-responsive" src="art/art2.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 2</p>
+     <p class="card text-center">Price:800/-</p>
+     <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+ <div class="column">
+    <div class="card-body">
+ <a href="art/art3.png"><span><img class ="card-img-top img-responsive" src="art/art3.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 3</p>
+     <p class="card text-center">Price:800/-</p>
+    <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+  <div class="column">
+    <div class="card-body">
+ <a href="art/art4.png"><span><img class ="card-img-top img-responsive" src="art/art4.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 4</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+  <div class="column">
+    <div class="card-body">
+ <a href="art/art5.png"><span><img class ="card-img-top img-responsive" src="art/art5.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 5</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art6.jpg"><span><img class ="card-img-top img-responsive" src="art/art6.jpg" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 6</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art7.png"><span><img class ="card-img-top img-responsive" src="art/art7.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 7</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art8.png"><span><img class ="card-img-top img-responsive" src="art/art8.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 8</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art9.png"><span><img class ="card-img-top img-responsive" src="art/art9.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 9</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art10.png"><span><img class ="card-img-top img-responsive" src="art/art10.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 10</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art11.png"><span><img class ="card-img-top img-responsive" src="art/art11.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 11</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art12.png"><span><img class ="card-img-top img-responsive" src="art/art12.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 12</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art13.png"><span><img class ="card-img-top img-responsive" src="art/art13.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 13</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art14.png"><span><img class ="card-img-top img-responsive" src="art/art14.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 14</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art15.png"><span><img class ="card-img-top img-responsive" src="art/art15.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 15</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art16.png"><span><img class ="card-img-top img-responsive" src="art/art16.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 16</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art17.png"><span><img class ="card-img-top img-responsive" src="art/art17.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 17</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art18.png"><span><img class ="card-img-top img-responsive" src="art/art18.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 18</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art19.png"><span><img class ="card-img-top img-responsive" src="art/art19.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 19</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art20.png"><span><img class ="card-img-top img-responsive" src="art/art20.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 20</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art21.png"><span><img class ="card-img-top img-responsive" src="art/art21.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 21</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art22.png"><span><img class ="card-img-top img-responsive" src="art/art22.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 22</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art23.png"><span><img class ="card-img-top img-responsive" src="art/art23.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 23</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art24.png"><span><img class ="card-img-top img-responsive" src="art/art24.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 24</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art25.png"><span><img class ="card-img-top img-responsive" src="art/art25.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 25</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art26.png"><span><img class ="card-img-top img-responsive" src="art/art26.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 26</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art27.png"><span><img class ="card-img-top img-responsive" src="art/art27.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 27</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art28.png"><span><img class ="card-img-top img-responsive" src="art/art28.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 28</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art29.png"><span><img class ="card-img-top img-responsive" src="art/art29.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 29</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art30.png"><span><img class ="card-img-top img-responsive" src="art/art30.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 30</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art31.png"><span><img class ="card-img-top img-responsive" src="art/art31.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 31</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art32.png"><span><img class ="card-img-top img-responsive" src="art/art32.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 32</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art33.png"><span><img class ="card-img-top img-responsive" src="art/art33.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 33</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art34.png"><span><img class ="card-img-top img-responsive" src="art/art34.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 34</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art35.png"><span><img class ="card-img-top img-responsive" src="art/art35.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 35</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art36.png"><span><img class ="card-img-top img-responsive" src="art/art36.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 36</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art37.png"><span><img class ="card-img-top img-responsive" src="art/art37.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 37</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art38.png"><span><img class ="card-img-top img-responsive" src="art/art38.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 38</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art39.png"><span><img class ="card-img-top img-responsive" src="art/art39.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 39</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art40.png"><span><img class ="card-img-top img-responsive" src="art/art40.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 40</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art41.png"><span><img class ="card-img-top img-responsive" src="art/art41.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 41</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art42.png"><span><img class ="card-img-top img-responsive" src="art/art42.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 42</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art43.png"><span><img class ="card-img-top img-responsive" src="art/art43.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 43</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art44.png"><span><img class ="card-img-top img-responsive" src="art/art44.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 44</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art45.png"><span><img class ="card-img-top img-responsive" src="art/art45.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 45</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art46.png"><span><img class ="card-img-top img-responsive" src="art/art46.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 46</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art47.png"><span><img class ="card-img-top img-responsive" src="art/art47.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 47</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+<div class="column">
+    <div class="card-body">
+ <a href="art/art48.png"><span><img class ="card-img-top img-responsive" src="art/art48.png" style="width:100%" "height:100%"></span></a>
+    <p class="card text-center" style="color: Black">Art 48</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+</div>
+
+<div id="News" class="tabcontent"><!--GARMENTS-->
+
+
+  <div class="card-deck">
+  <div class="column">
+    <div class="card-body">
+      <a href="shirt1.html">
+ <img class ="card-img-top img-responsive" src="amazon/dadsmom3.jpeg" alt="cosmetics" style="width:100%"></a>
+    <p class="card text-center" style="color: black">Dadsmom T-shirt</p>
+        <p class="card text-center">Price:800/-</p>
+       <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+ </div>
+
+
+  <div class="column">
+    <div class="card-body">
+      <a href="shirt2.html">
+ <img class ="card-img-top img-responsive" src="amazon/dadsmom6.jpeg" alt="cosmetics" style="width:100%"></a>
+    <p class="card text-center" style="color: black">Ladies Dadsmom T-shirt</p>
+     <p class="card text-center">Price:800/-</p>
+     <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+ <div class="column">
+    <div class="card-body">
+      <a href="shirt3.html">
+ <img class ="card-img-top img-responsive" src="amazon/shirt1.jpg" alt="cosmetics" style="width:100%"></a>
+    <p class="card text-center" style="color: black">Black Shirt</p>
+     <p class="card text-center">Price:800/-</p>
+    <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+ </div>
+
+
+ <div id="Contact" class="tabcontent"> <!--GIFT ITEMS-->
+
+
+<div class="card-deck">
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="gifts\rose.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">GIFT 1</p>
+        <p class="card text-center">Price:800/-</p>
+       <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+ </div>
+
+
+ <!--  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\2.png" alt="cosmetics" style="width:100%;">
+    <p class="card text-center" style="color: orange">GIFT 2</p>
+     <p class="card text-center">Price:800/-</p>
+    <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+ <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\6.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">GIFT 3</p>
+     <p class="card text-center">Price:800/-</p>
+    <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\4.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">GIFT 4</p>
+     <p class="card text-center">Price:800/-</p>
+  <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\4.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">GIFT 5</p>
+     <p class="card text-center">Price:800/-</p>
+   <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div> -->
+</div>
+
+
+<div id="About" class="tabcontent"><!--FOOD-->
+
+<div class="card-deck">
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="food\rice
+
+
+ .jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">FOOD 1</p>
+        <p class="card text-center">Price:800/-</p>
+        <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+ </div>
+
+
+ <!--  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\2.png" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">FOOD 2</p>
+     <p class="card text-center">Price:800/-</p>
+      <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+ <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\6.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">FOOD 3</p>
+     <p class="card text-center">Price:800/-</p>
+     <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+
+
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\4.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">FOOD 4</p>
+     <p class="card text-center">Price:800/-</p>
+   <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div>
+
+  <div class="column">
+    <div class="card-body">
+ <img class ="card-img-top img-responsive" src="clothing\4.jpg" alt="cosmetics" style="width:100%">
+    <p class="card text-center" style="color: orange">FOOD 5</p>
+     <p class="card text-center">Price:800/-</p>
+   <a href="viewCart.html"><button class="button" style="width: 45%"><span>ADD CART</span></button></a>
+  </div>
+</div> -->
+</div>
+
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
+</body>
+</html>

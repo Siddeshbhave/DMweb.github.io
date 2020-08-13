@@ -1,0 +1,653 @@
+<?php
+
+session_start();
+
+if(isset($_SESSION['id_user']) || isset($_SESSION['id_retailer']) ||  isset($_SESSION['id_self'])) {
+  header("Location: index.html");
+  exit();
+}
+
+?>
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>DADSMOM Website</title>
+
+  <!--<link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/_all-skins.min.css">-->
+  <!-- Custom -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="animate.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css">
+  <link href="twentyywenty1/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty1/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+
+<style>
+.navbar-fixed-top{
+    min-height: 70px;
+
+}
+.navbar-collapse{
+    padding-top: 3px;
+}
+
+nav.navbar ul li > ul {
+  background:#B0BEC5;
+  box-shadow: none;
+}
+
+.navbar-right
+{
+  float: right!important;
+  padding-right: 20px;
+}
+
+
+
+ body{  background: #183A5B/*#19181A*/; /* Dark Blue */
+      /*color: #ffffff;*/
+      }
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  border-radius: 50px;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+   border-radius: 50px;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+   border-radius: 50px;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+   border-radius: 50px;
+  color: white;
+}
+.fa-map-marker{
+  background: red;
+   border-radius: 50px;
+  color: white;
+}
+.btn {
+      padding: 10px 20px;
+      background-color: white;
+      color: black;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+  /*.bg-3{
+       background-color: #474e5d;
+      color: #ffffff;
+  }*/
+  .container-fluid {
+      padding-top: 40px;
+      padding-bottom: 40px;
+  }
+  .center-block {
+  display: white;
+  margin-right: auto;
+  margin-left: auto;
+  /*margin-right: 50px;
+  margin-left: 50px*/;
+
+
+}
+.img-circle{
+  border-radius: 50;
+}
+.panel-heading  a:before {
+   font-family: 'Glyphicons Halflings';
+   content: "\e114";
+   float: right;
+   transition: all 0.5s;
+}
+.panel-heading.active a:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+ p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+
+
+h5
+{
+  font-size:12px;
+}
+
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*ul.submenu {
+    display: none;
+}
+
+li:hover ul.submenu {
+    display: block;
+}*/
+
+.dropdown-childmenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-childmenu {
+    display: none;
+    /*position: absolute;*/
+    /*min-width: 160%;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 15%;
+
+}
+
+</style>
+</head>
+ <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"></div>
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="banner/D1.png" height="70" width="70" class="logo" alt=""></a>
+            </div>
+
+             <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+                     <li><a href="index.html#offerings"><span><h5><i class="glyphicon glyphicon-user"></i></span><strong>&nbspCONSUMER SERVICES</strong></h5></a></li>
+                     <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>CONSUMER SERVICES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#offerings">TODAY'S SPECIAL OFFERS</a></li>
+
+        <li class="dropdown-submenu">
+        <a  tabindex="-1" href="#">OTHER OFFERS<span class="caret"></span></a>
+        <ul class="dropdown-childmenu">
+                            <li><a href="grocerytab.html">GROCERY</a></li>
+                            <li><a href="homemadetab.html">HOME-MADE</a></li>
+                            <li><a href="tickettab.html">TICKETING</a></li>
+                            <li><a href="paymenttab.html">PAYMENTS</a></li>
+                            <li><a href="couriertab.html">COURIER</a></li>
+                            <li><a href="topuptab.html">TOP-UP</a></li>
+                        </ul>
+                      </li>
+            </ul>
+<script>
+  $('.dropdown ul li').hover(function() {
+  $(this).children('ul').stop(true,false,true).slideToggle(300);});
+</script>
+
+                      <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> -->
+                   <li><a href="merchantnew.html"><span><h5><i class="glyphicon glyphicon-globe"></i></span><strong>&nbspNETWORK</strong></h5></a></li>
+
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><i class="glyphicon glyphicon-briefcase"></i><strong>&nbspBUSINESSES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enterprisesbusiness.html">ENTERPRISES</a></li>
+                            <li><a href="selfemployment.html">SELF-EMPLOYMENT</a></li>
+                            <li><a href="retailertab.html#retailer">RETAILERS</a></li>
+                            <li><a href="homebasedtab.html">HOME-BASED</a></li>
+                            <li><a href="wholesalertab.html">WHOLESALER</a></li>
+                            <li><a href="servicetab.html">SERVICE PROVIDERS</a></li>
+                            <li><a href="banktab.html">BANKING & FINANCIAL SERVICES</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-pencil"></i></span><b>&nbspSIGN-UP</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-log-inr"></i></span><b>&nbspLOG-IN</b></h5></a>
+                    </li>
+                     <li>
+                    <a class="dropdown-toggle" href="gallery.html"><h5><span><i class="glyphicon glyphicon-picture"></i></span><b>&nbspGALLERY</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="navigation.html"><h5><span><i class="glyphicon glyphicon-envelope"></i></span><b>&nbspCONNECT</b></h5></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown">
+                  <h5><span><i class="glyphicon glyphicon-menu-hamburger"></i></span><strong>&nbspCORPORATE</strong></h5></a>
+                  <ul class="dropdown-menu">
+                             <li><a href="aboutus.html#history">HISTORY</a></li>
+                            <li><a href="aboutus.html#platform">PLATFORM</a></li>
+                            <li><a href="aboutus.html#objectives">OBJECTIVES</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-dark bg-dark">
+                    <li>
+                    <a class="dropdown-toggle" onclick="goBack()"><h5><span><i class="glyphicon glyphicon-arrow-left"  style="color: orange"
+></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="index.html"><h5><span><i class="glyphicon glyphicon-home"  style="color: orange"
+></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-arrow-right"  style="color: orange"
+></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" style="margin-right: 20px;" onclick="openSearch()"><h5><span><i class="glyphicon glyphicon-search"  style="color: orange"
+></i></span><b></b></h5></a>
+                    <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay" style="color:white" >×</span>
+  <div class="overlay-content">
+    <form action="/action_page.html">
+      <input type="text" placeholder="Search.." name="search" style="color: black">
+      <button type="submit" style="background-color: grey"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+                    </li>
+                </ul>
+
+            </div>
+
+     </nav>
+
+</div>
+  <br />
+
+          <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_self']) || empty($_SESSION['id_retailer'])) { ?>
+          <li>
+            <a href="login.html"><span><i class="glyphicon glyphicon-user"></i></span>&nbspLOGIN</a>
+          </li>
+
+          <?php } else {
+
+            if(isset($_SESSION['id_user'])) {
+          ?>
+          <li>
+            <a href="consumer/index.html">Dashboard</a>
+          </li>
+          <?php
+          } else if(isset($_SESSION['id_self'])) {
+          ?>
+          <li>
+            <a href="selfemploy/index.html">Dashboard</a>
+          </li>
+          <?php }
+          else if(isset($_SESSION['id_retailer'])){
+          ?>
+          <li>
+            <a href="retailer/index.html">Dashboard</a>
+          </li>
+        <?php }?>
+          <li>
+            <a href="logout.html">Logout</a>
+          </li>
+          <?php } ?>
+        </ul>
+      </div>
+    </div>
+    </nav>
+
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3"><br><br><br><br><br>
+ <h1 class="wow fadeInDownBig text-center" style="font-family: 'Vollkorn', serif; animation-delay: 0s; color: white"><b>SIGN-UP</b></h1><br><br><br>
+  <div class="row" style="padding-right: 15px">
+
+    <div class="col-sm-3">
+
+      <img src="banner/self.jpg" class=" img-circle margin center-block" alt="Image" width="180" height="180" >
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="text-align: center">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"><b>SELF-EMPLOYED</b></a>
+         </h4>
+        </div>
+       <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black; padding-left: 10px; padding-right: 10px"><p class="text-justify"><b><span><img src="banner/D1.png" height="25" width="25" class="logo" alt="">DADSMOM</span> enables Undergraduates and above to –</b><br>
+                        Operate a Nil Stock Supermarket of groceries and other household requirements.<br>
+                        Offers wide range of digitally enabled and provisioned services such as top up, ticketing, collections, remittances, tax payments to name a few.<br>
+                        Financial Assistance, if needed.
+                        {Financing to Retailers and Self-employed is subject to discretion of our Partner Institutions}
+                        <br></p><h4 align="center"><a href="registerSelfEmploy.html">Register</a></h4></div>
+        </div>
+      </div>
+    </div>
+
+   <div class="col-sm-3">
+
+      <img src="banner/cart3.jpg" class="img-responsive img-circle margin center-block" alt="Image" width="180" height="180">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="text-align: center">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1"><b>RETAILERS</b></a>
+         </h4>
+        </div>
+       <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black"><p class="text-justify"><b><span><img src="banner/D1.png" height="25" width="25" class="logo" alt="">DADSMOM</span> offers a wide range of services to pick and choose from. These includes - </b><br>
+                    Mobile-based Business Management Software with an optional desktop version.<br>
+                    Procurement and Delivery of High Quality Groceries and other products at best possible prices.<br>
+                    Field Team for Doorstep Delivery to the Retailer’s Customers.<br>
+                    Payment Gateway and other tools required to accept and process digital mode of payments by customers<br>
+                    Value Added Services without any investments.<br>
+                    Working Capital Finance in association with Partnering Institutions.<br></p><h4 align="center"><a href="registerRetailer.html">Register</a></h4></div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-sm-3">
+
+      <img src="banner/trust.jpg" class="img-responsive img-circle margin center-block" alt="Image" width="180" height="180">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="text-align: center">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><b>SUPPLIERS & SERVICE-PROVIDERS</b></a>
+         </h4>
+        </div>
+       <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black"><p class="text-justify"><b><span><img src="banner/D1.png" height="25" width="25" class="logo" alt="">DADSMOM</span> ensures :</b><br>
+                          Utmost convenience in terms of Doorstep delivery at a time that suits them.<br>
+                          Savings on every Rupee spent.<br>
+                          Product quality and quantity.<br>
+                          Loyalty Benefits.<br>
+                          Choice of Mode of payment viz. Cash On Delivery, Digital Payment on Delivery and wherever feasible short term credit.<br>
+                          Customer Care on call.<br></p><h4 align="center"><a href="registerSupplier.html">Register</a></h4></div>
+        </div>
+      </div><br>
+    </div>
+
+ <div class="col-sm-3">
+
+      <img src="banner/shop3.png" class="img-responsive img-circle margin center-block" alt="Image" width="180" height="180">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="text-align: center">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse4"><b>WHOLESALER</b></a>
+         </h4>
+        </div>
+       <!-- <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black"><p class="text-justify"><b><span><img src="banner/D1.png" height="25" width="25" class="logo" alt="">DADSMOM</span> offers a wide range of services to pick and choose from. These includes - </b><br>
+                    Mobile-based Business Management Software with an optional desktop version.<br>
+                    Procurement and Delivery of High Quality Groceries and other products at best possible prices.<br>
+                    Field Team for Doorstep Delivery to the Retailer’s Customers.<br>
+                    Payment Gateway and other tools required to accept and process digital mode of payments by customers<br>
+                    Value Added Services without any investments.<br>
+                    Working Capital Finance in association with Partnering Institutions.<br></p><h4 align="center">
+                      </div>
+             -->          <!--<a href="registerWholesaler.html">Register</a></h4>-->
+
+      </div>
+    </div>
+  </div>
+
+ </div><br><br><br>
+
+ <div class="row" align="center">
+       <img src="banner/consumer3.png"  class= "img-responsive img-circle margin center-block" alt="Image" width="220" height="220"  >
+    <a class="btn btn-primary"  href="registerConsumer.html" role="button"><strong>CONSUMER REGISTRATION</strong></a>
+
+
+
+      <!--<div class="row" align="navbar-right">
+      <div class="col-sm-3">
+
+   <img src="banner/consumer2.png" class= "img-responsive img-circle margin center-block"  alt="Image" width="180" height="180"  >
+   <div class="panel panel-default">
+     <div class="panel-heading">
+       <h4 class="panel-title" style="text-align: center">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"><b>CONSUMER </b></a>
+      </h4>
+      </div>
+       <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black"><p class="text-justify"><b>DADSMOM offers a wide range of services to pick and choose from. These includes - </b><br>
+                    Mobile-based Business Management Software with an optional desktop version.<br>
+                    Procurement and Delivery of High Quality Groceries and other products at best possible prices.<br>
+                    Field Team for Doorstep Delivery to the Retailer’s Customers.<br>
+                    Payment Gateway and other tools required to accept and process digital mode of payments by customers<br>
+                    Value Added Services without any investments.<br>
+                    Working Capital Finance in association with Partnering Institutions.<br></p><h4 align="center"><a href="registerConsumer.html">Register</a></h4><br><br>
+</div>-->
+  </div>
+</div>
+</div>
+</div><br>
+
+</div><br><br>
+    <!--<div class="row" align="center">
+    <div class="col-sm-1" > </div>
+  </div>
+      <img src="banner/trust.jpg" class= "img-responsive img-circle margin center-block padding-right" alt="Image" width="180" height="180"  >
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title" style="text-align: center">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3"><b>SUPPLIERS & SERVICE-PROVIDERS</b></a>
+         </h4>
+        </div>
+       <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body" style="color: black"><p class="text-justify"><b>DADSMOM ensures :</b><br>
+                          Utmost convenience in terms of Doorstep delivery at a time that suits them.<br>
+                          Savings on every Rupee spent.<br>
+                          Product quality and quantity.<br>
+                          Loyalty Benefits.<br>
+                          Choice of Mode of payment viz. Cash On Delivery, Digital Payment on Delivery and wherever feasible short term credit.<br>
+                          Customer Care on call.<br></p><h4 align="center"><a href="registerSupplier.html">Register</a>
+</div>
+      </div>
+    </div>-->
+
+ <footer class="py-4 main-footer" style="margin-right: 0px; background-color: black; padding-top: 20px; padding-bottom:20px">
+
+
+    <div class="text-center">
+      <h5 style="color:coral"><strong>Powered by :<a href="http://upass.cc/"> (UPASS) </a></strong></h5>
+     <span class="fa-stack fa-2x">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-facebook fa-stack-1x"></i>
+    </span>
+      <span class="fa-stack fa-2x">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-instagram fa-stack-1x"></i>
+    </span>
+      <span class="fa-stack fa-2x">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-google fa-stack-1x"></i>
+    </span>
+     <span class="fa-stack fa-2x">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-twitter fa-stack-1x"></i>
+    </span>
+    </div>
+    <div style="color: white">
+      <br>
+       <center>  &copy; 2018 - upass.cc All Rights Reserved </center> <a target="_blank"></a>
+    </div>
+  </footer>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="js/wow.min.js"></script>
+              <script>
+              new WOW().init();
+            </script>
+<script>
+   $('.panel-collapse').on('show.bs.collapse', function () {
+    $(this).siblings('.panel-heading').addClass('active');
+  });
+
+  $('.panel-collapse').on('hide.bs.collapse', function () {
+    $(this).siblings('.panel-heading').removeClass('active');
+  });
+</script>
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+</body>
+</html>

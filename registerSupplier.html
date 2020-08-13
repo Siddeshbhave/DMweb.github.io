@@ -1,0 +1,912 @@
+<?php
+session_start();
+
+if(isset($_SESSION['id_user']) || isset($_SESSION['id_retailer']) || isset($_SESSION['id_self'])) {
+  header("Location: index.html");
+  exit();
+}
+
+require_once("db.html");
+?>
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>DADSMOM Website</title>
+
+  <!--<link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/_all-skins.min.css">-->
+  <!-- Custom -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="animate.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css">
+  <link href="twentytwenty1/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty1/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<style>
+.navbar-fixed-top{
+    min-height: 70px;
+
+}
+.navbar-collapse{
+    padding-top: 3px;
+}
+
+nav.navbar ul li > ul {
+  background:#B0BEC5;
+  box-shadow: none;
+}
+
+.navbar-right
+{
+  float: right!important;
+  padding-right: 20px;
+}
+  .row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+  vertical-align: center;
+}
+
+.col-25 {
+  -ms-flex: 100%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  vertical-align: center;
+  align-content: center;
+}
+
+.col-75 {
+  -ms-flex: 100%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+
+
+.multiselect {
+  width: 200px;
+}
+
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+#checkboxes label {
+  display: block;
+}
+
+#checkboxes label:hover {
+  background-color: #1e90ff;
+}
+h5{
+  font-size: 12px;
+}
+
+
+
+/*.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}*/
+
+
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*ul.submenu {
+    display: none;
+}
+
+li:hover ul.submenu {
+    display: block;
+}*/
+
+.dropdown-childmenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-childmenu {
+    display: none;
+    /*position: absolute;*/
+    /*min-width: 160%;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 15%;
+
+}
+
+</style>
+</head>
+<body>
+
+
+ <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"></div>
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="banner/D1.png" height="70" width="70" class="logo" alt=""></a>
+            </div>
+
+             <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+                  <li><a href="index.html#offerings"><span><h5></span><strong>&nbspCONSUMER SERVICES</strong></h5></a></li>
+                     <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>CONSUMER SERVICES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#offerings">TODAY'S SPECIAL OFFERS</a></li>
+
+        <li class="dropdown-submenu">
+        <a  tabindex="-1" href="#">OTHER OFFERS<span class="caret"></span></a>
+        <ul class="dropdown-childmenu">
+                            <li><a href="grocerytab.html">GROCERY</a></li>
+                            <li><a href="homemadetab.html">HOME-MADE</a></li>
+                            <li><a href="tickettab.html">TICKETING</a></li>
+                            <li><a href="paymenttab.html">PAYMENTS</a></li>
+                            <li><a href="couriertab.html">COURIER</a></li>
+                            <li><a href="topuptab.html">TOP-UP</a></li>
+                        </ul>
+                      </li>
+            </ul>
+<script>
+  $('.dropdown ul li').hover(function() {
+  $(this).children('ul').stop(true,false,true).slideToggle(300);});
+</script>
+
+                      <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> -->
+                   <li><a href="merchantnew.html"><span><h5><i class="glyphicon glyphicon-globe"></i></span><strong>&nbspNETWORK</strong></h5></a></li>
+
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>BUSINESSES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enterprisesbusiness.html">ENTERPRISES</a></li>
+                            <li><a href="selfemployment.html">SELF-EMPLOYMENT</a></li>
+                            <li><a href="retailertab.html#retailer">RETAILERS</a></li>
+                            <li><a href="homebasedtab.html">HOME-BASED</a></li>
+                            <li><a href="wholesalertab.html">WHOLESALER</a></li>
+                            <li><a href="servicetab.html">SERVICE PROVIDERS</a></li>
+                            <li><a href="banktab.html">BANKING & FINANCIAL SERVICES</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-pencil"></i></span><b>&nbspSIGN-UP</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-user"></i></span><b>&nbspLOG-IN</b></h5></a>
+                    </li>
+                     <li>
+                    <a class="dropdown-toggle" href="gallery.html"><h5><span><i class="glyphicon glyphicon-picture"></i></span><b>&nbspGALLERY</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="navigation.html"><h5><span><i class="glyphicon glyphicon-envelope"></i></span><b>&nbspCONNECT</b></h5></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown">
+                  <h5><span><i class="glyphicon glyphicon-menu-hamburger"></i></span><strong>&nbspCORPORATE</strong></h5></a>
+                  <ul class="dropdown-menu">
+                             <li><a href="aboutus.html#history">HISTORY</a></li>
+                            <li><a href="aboutus.html#platform">PLATFORM</a></li>
+                            <li><a href="aboutus.html#objectives">OBJECTIVES</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-dark bg-dark">
+                    <li>
+                    <a class="dropdown-toggle" onclick="goBack()"><h5><span><i class="glyphicon glyphicon-arrow-left"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="index.html"><h5><span><i class="glyphicon glyphicon-home"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-arrow-right"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" onclick="openSearch()"><h5><span><i class="glyphicon glyphicon-search"></i></span><b></b></h5></a>
+                    <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay" style="color:white" >×</span>
+  <div class="overlay-content">
+    <form action="/action_page.html">
+      <input type="text" placeholder="Search.." name="search" style="color: black">
+      <button type="submit" style="background-color: grey"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+                    </li>
+                </ul>
+
+            </div>
+
+    </nav>
+  <br />
+</div>
+
+                  <?php if(empty($_SESSION['id_user']) && empty($_SESSION['id_retailer']) && empty($_SESSION['id_user'])) { ?>
+          <li>
+            <a href="Login.html"><span><i class="glyphicon glyphicon-user"></i></span>&nbsp<strong>Login</strong></a>
+          </li>
+          <li>
+            <a href="signup.html">Sign Up</a>
+          </li>
+          <?php } else {
+
+            if(isset($_SESSION['id_user'])) {
+          ?>
+          <li>
+            <a href="consumer/index.html">Dashboard</a>
+          </li>
+          <?php
+          } else if(isset($_SESSION['id_self'])) {
+          ?>
+          <li>
+            <a href="selfemploy/index.html">Dashboard</a>
+          </li>
+          <?php
+          } else if(isset($_SESSION['id_retailer'])){
+           ?>
+          }
+          <li>
+            <a href="retailer/index.html">Dashboard</a>
+          </li>
+        <?php } ?>
+          <li>
+            <a href="logout.html">Logout</a>
+          </li>
+          <?php } ?>
+        </ul>
+      </div>
+    </div>
+  </nav><br><br><br><br><br><br>
+
+  <h2 style="text-align: center; font-weight: bold;"><u> Home-Based Business</u>
+   <div id="google_translate_element" style="width: 15%; float:right;"></div></h2>
+
+    <br>
+
+<div class="form-group">
+    <label style="float: right; margin-right: 4%;"><u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></label><label style="float:right; color: grey">Reference No:</label>
+
+  </div>
+<br><br><br>
+    <div class="container">
+     <div class="col-md-6">
+
+      <div>
+      <form method="post" id="registerRetailer" action="addretailer.html" enctype="multipart/form-data">
+
+        <div class="row">
+          <div class="col-75">
+
+            <!--<label for="fname" ><i class="fa fa-user"></i> Name:</label>
+             <input  class="form-control input-lg" type="text" id="name" name="name" placeholder="">
+
+            <input  class="form-control input-lg" type="text" id="name" name="name" placeholder="Middle Name">
+             <input  class="form-control input-lg" type="text" id="name" name="name" placeholder="Last Name">
+              <label>Gender:</label>
+  <input type="radio" name="gender" value="female"> Female&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" name="gender" value="male"> Male&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="gender" value="other"> Other&nbsp;&nbsp;&nbsp;&nbsp;-->
+  <span class="error"></span>
+  <br>
+
+
+
+            <label for="fname"><i class="fa fa-user"></i>Trade Name (If Any):</label>
+            <input class="form-control input-lg" type="text" id="companyname" name="companyname" placeholder="">
+            <!--<label for="email"><i class="fa fa-envelope"></i> Email:</label>
+            <input  class="form-control input-lg" type="text" id="email" name="email" placeholder="">-->
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address:</label>
+            <input  class="form-control input-lg" type="text" id="adr" name="address" placeholder="House No." required >
+            <input  class="form-control input-lg" type="text" id="adr" name="address" placeholder="Building" required >
+            <input class="form-control input-lg"  type="text" id="adr" name="address" placeholder="Street " required >
+            <input  class="form-control input-lg" type="text" id="adr" name="address" placeholder="Landmark" required >
+      <input  class="form-control input-lg" type="text" id="postal" name="postal" placeholder="Locality" required>
+      <label for="email"><i class=""></i> PIN Code:</label>
+            <input  class="form-control input-lg" type="text" id="PIN" name="PIN" placeholder="">
+<!-- Copy this thing from -->
+<div class="form-group">
+               <label><i class=""></i> State:</label>
+                <select class="form-control  input-lg" id="states" name="states" required>
+                <option selected="" value="">Select State</option>
+                <?php
+                  $sql="SELECT * FROM states where country_id=101";
+                  $result=$conn->query($sql);
+
+                  if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='".$row['name']."' data-id='".$row['id']."'>".$row['name']."</option>";
+                    }
+                  }
+                ?>
+                </select>
+                </div>
+                <label for="fname"><i class=""></i>City/Town:</label>
+            <input class="form-control input-lg" type="text" id="companyname" name="companyname" placeholder="">
+            <!--<label for="email"><i class="fa fa-envelope"></i> Email:</label>
+        <div id="cityDiv" class="form-group" style="display: block;">
+             <label><i class=""></i> City:</label>
+                <select class="form-control  input-lg" id="city" name="city" required>
+                  <option selected="">Select City</option>
+                </select>
+              </div>
+             till here -->
+              <div class="form-group">
+            <label for="fname" ><i class="fa fa-user"></i> Owner(s):</label>
+             <input  class="form-control input-lg" type="text" id="name" name="name" placeholder="Main">
+
+           <input  class="form-control input-lg" type="text" id="name" name="name" placeholder="Alternate">
+
+
+               <label><i class="fa fa-phone"></i> Phone No:</label>
+                <input  class="form-control input-lg" class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="">
+
+               <label for="email"><i class="fa fa-envelope"></i> Email:</label>
+            <input  class="form-control input-lg" type="text" id="email" name="email" placeholder="">
+
+
+
+<div class="form-group">
+<label>Availability:</label>
+  <input type="radio" name="radio" data-col="1" value="1"> Seasonal &nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="radio" name="radio" data-col="2" value="0"> Round the year</div>
+
+
+   <div class="form-group" id = "gstn" style="display: none;"><br>
+ <label for="fname">Period:</label>
+  <input class="form-control input-lg" type="text" id="" name="" placeholder="">
+</div>
+
+</div>
+
+
+  <!-- <div class="form-group">
+     <label>Products:</label>
+    <div class="selectBox" onclick="showCheckboxes()">
+      <select style="width: 35%">
+        <option></option>
+      </select>
+      <div class="overSelect"></div>
+    </div>
+    <div id="checkboxes">
+      <label for="one">&nbsp;
+        <input type="checkbox" id="one" /> Grocery </label>
+      <label for="two">&nbsp;
+        <input type="checkbox" id="two" /> Grain & Pulses </label>
+      <label for="three">&nbsp;
+        <input type="checkbox" id="three" / > Confectionery </label>
+              <label for="one">&nbsp;
+        <input type="checkbox" id="four" /> Detergent & Toiletries </label>
+      <label for="two">&nbsp;
+        <input type="checkbox" id="five" /> Oil & Ghee </label>
+      <label for="three">&nbsp;
+        <input type="checkbox" id="six" / > Ready to Eat/Tid-bits </label>
+         <label for="three">&nbsp;
+        <input type="checkbox" id="seven" / > Pickels & Sauces </label>
+<label for="three">&nbsp;
+        <input type="checkbox" id="eight" / > Miscellaneous </label>
+
+
+    </div>
+  </div> -->
+
+
+<div class="form-group">
+  <label>Category:</label>
+     <input type="checkbox" id="eight" / > Arts &nbsp;&nbsp;&nbsp;
+        <input type="checkbox" id="eight" /> Garments&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" id="eight" / > Gifts&nbsp;&nbsp;&nbsp;
+        <input type="checkbox" id="eight" /> Food Items&nbsp;&nbsp;&nbsp;
+           <input type="checkbox" id="eight" /> Other
+
+
+
+</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div class="form-group">
+                  <label>Specialities(If Any):</label>
+                  <input  class="form-control input-lg" type="text" id="product" name="product" placeholder="" required >
+
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<label for="fname"><i class=""></i> Price Range:</label>
+            <input class="form-control input-lg" type="text" id="companyname" name="companyname" placeholder="">
+
+
+
+<div class="form-group">
+<label>Service To Customer(Please mark against each item):</label>
+
+
+<table style="width: 40%">
+                <table class="table table-bordered table-hover">
+<tr>
+    <th></th>
+    <th style="text-align: center;">Yes</th>
+    <th style="text-align: center;">No</th>
+
+</tr>
+<tr>
+    <td style="width: 40%;">Home Delivery</td>
+    <td style="text-align: center;"><input type="radio" name="row-1" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-1" data-col="2"></td>
+</tr>
+
+<tr>
+    <td>Order on Phone/App</td>
+      <td style="text-align: center;"><input type="radio" name="row-2" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-2" data-col="2"></td>
+</tr>
+<tr>
+    <td>Online/Card Payment</td>
+     <td style="text-align: center;"><input type="radio" name="row-3" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-3" data-col="2"></td>
+<br>
+
+
+
+</table>
+</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<div class="form-group1">
+<label>Which of the following <span><img src="banner/D1.png" height="25" width="25" class="logo"></span>&nbsp;DADSMOM services you would like to have?</label>
+<table style="width: 40%">
+                <table class="table table-bordered table-hover">
+<tr>
+    <th></th>
+    <th style="text-align: center;">Yes</th>
+    <th style="text-align: center;">No</th>
+</tr>
+
+<tr>
+    <td>Home Delivery to Customer</td>
+      <td style="text-align: center;"><input type="radio" name="row-4" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-4" data-col="2"></td>
+</tr>
+<tr>
+    <td>Online/Card Payment</td>
+     <td style="text-align: center;"><input type="radio" name="row-5" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-5" data-col="2"></td>
+<br>
+<tr>
+    <td>Mobile App for ordering</td>
+     <td style="text-align: center;"><input type="radio" name="row-6" data-col="1"></td>
+    <td style="text-align: center;"><input type="radio" name="row-6" data-col="2"></td>
+</tr>
+</table></div>
+
+
+
+            <!--<div class="form-group">
+             <label><i class="fa fa-institution"></i> Country:</label>
+                <select class="form-control  input-lg" id="country" name="country" required>
+                <option selected="" value="">Select Country:</option>
+                <?php
+                  $sql="SELECT * FROM countries";
+                  $result=$conn->query($sql);
+
+                  if($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                      echo "<option value='".$row['name']."' data-id='".$row['id']."'>".$row['name']."</option>";
+                    }
+                  }
+                ?>
+
+                </select>
+              </div> -->
+
+              <!--<div class="form-group">
+                <label for="postal">Pin:</label>
+                <input  class="form-control input-lg" type="text" id="postal" name="postal" placeholder="">
+              </div>-->
+               <!--<div class="form-group">
+                <label><i class="fa fa-phone"></i> Phone No:</label>
+                <input  class="form-control input-lg" class="form-control input-lg" type="text" id="contactno" name="contactno" minlength="10" maxlength="10" onkeypress="return validatePhone(event);" placeholder="Phone Number">
+              </div><br>-->
+
+
+              <!--<div class="form-group">
+                <label>Password:</label>
+                <input  class="form-control input-lg" type="password" id="password" name="password" placeholder="Password *" required>
+              </div><br>
+              <div class="form-group">
+                <label>Confirm Password:</label>
+                <input class="form-control input-lg" type="password" id="cpassword" name="cpassword" placeholder="Confirm Password *" required>
+              </div><br>-->
+              <!--<div id="passwordError" class="btn btn-flat btn-danger hide-me" >
+                    Password Mismatch!!
+                  </div>-->
+               <!--<div class="form-group">
+                <label><i class="fa fa-paperclip"></i> Attach Company Logo:</label>
+                <input type="file" name="image" class="form-control input-lg" required>
+              </div><br>-->
+
+               <div class="form-group checkbox">
+                <label><a href="index.html"><input type="checkbox" required> I accept terms & conditions</a></label>
+              </div>
+<div class="form-group" style="margin-left:80%;">
+                <button type="Edit" class="btn btn-flat btn-success">Edit</button>
+              </div>
+
+              <div class="form-group" >
+               <button type="submit" class="btn btn-flat btn-success">Submit</button>
+              </div>
+              <?php
+              //If Company already registered with this email then show error message.
+              if(isset($_SESSION['registerError'])) {
+                ?>
+                <div>
+                  <p class="text-center" style="color: red;">Email Already Exists! Choose A Different Email!</p>
+                </div>
+              <?php
+               unset($_SESSION['registerError']); }
+              ?>
+              <?php
+              if(isset($_SESSION['uploadError'])) {
+                ?>
+                <div>
+                  <p class="text-center" style="color: red;"><?php echo $_SESSION['uploadError']; ?></p>
+                </div>
+              <?php
+               unset($_SESSION['uploadError']); }
+              ?>
+
+          </div>
+    </div>
+
+</form>
+</div><br><br>
+</div>
+</div>
+
+<br>
+<footer class="py-4 main-footer" style="margin-left: 0px; background-color: black; padding-top: 20px; padding-bottom: 30px">
+  <div style="color: white">
+      <br>
+       <center>  &copy; 2018 - upass.cc All Rights Reserved </center> <a target="_blank"></a>
+    </div>
+  </footer>
+
+<!-- jQuery 3 -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+  function validatePhone(event) {
+
+    //event.keycode will return unicode for characters and numbers like a, b, c, 5 etc.
+    //event.which will return key for mouse events and other events like ctrl alt etc.
+    var key = window.event ? event.keyCode : event.which;
+
+    if(event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 39) {
+      // 8 means Backspace
+      //46 means Delete
+      // 37 means left arrow
+      // 39 means right arrow
+      return true;
+    } else if( key < 48 || key > 57 ) {
+      // 48-57 is 0-9 numbers on your keyboard.
+      return false;
+    } else return true;
+  }
+</script>
+
+<!-- <script>
+  $("#country").on("change", function() {
+    var id = $(this).find(':selected').attr("data-id");
+    $("#state").find('option:not(:first)').remove();
+    if(id != '') {
+      $.post("state.html", {id: id}).done(function(data) {
+        $("#state").append(data);
+      });
+      $('#stateDiv').show();
+    } else {
+      $('#stateDiv').hide();
+      $('#cityDiv').hide();
+    }
+  });
+</script> -->
+
+<script type="text/javascript">
+  $('input:radio').change(function(){
+    var value = $("form input[type='radio']:checked").val();
+    if(value == 1){
+      $('#gstn').show();
+    } else {
+       $('#gstn').hide();
+    }
+;
+});
+</script>
+
+<script>
+  $("#states").on("change", function() {
+    var id = $(this).find(':selected').attr("data-id");
+    $("#city").find('option:not(:first)').remove();
+    if(id != '') {
+      $.post("city.html", {id: id}).done(function(data) {
+        $("#city").append(data);
+      });
+    } else {
+    }
+  });
+</script>
+<script>
+  $("#registerCompanies").on("submit", function(e) {
+    e.preventDefault();
+    if( $('#password').val() != $('#cpassword').val() ) {
+      $('#passwordError').show();
+    } else {
+      $(this).unbind('submit').submit();
+    }
+  });
+</script>
+
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
+
+<script type="text/javascript">
+var expanded = false;
+
+function showCheckboxes() {
+  var checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
+</script>
+   <script type="text/javascript">
+ $('input:radio').change(function(){
+    var value = $("form input[type='radio']:checked").val();
+    if(value == 1){
+      $('#gstn').show();
+    } else {
+       $('#gstn').hide();
+    }
+;
+});
+</script>
+
+
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

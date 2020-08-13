@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <title>DADSMOM Website</title>
+
+  <!--<link rel="stylesheet" href="css/AdminLTE.min.css">
+  <link rel="stylesheet" href="css/_all-skins.min.css">-->
+  <!-- Custom -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="animate.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css">
+  <link href="twentyywenty1/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty1/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+</head>
+
+
+ <style type="text/css">
+ .navbar-fixed-top{
+    min-height: 70px;
+
+}
+.navbar-collapse{
+    padding-top: 3px;
+}
+
+nav.navbar ul li > ul {
+  background:#B0BEC5;
+  box-shadow: none;
+}
+
+.navbar-right
+{
+  float: right!important;
+  padding-right: 20px;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+
+
+
+h5{
+  font-size: 12px;
+}
+
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*ul.submenu {
+    display: none;
+}
+
+li:hover ul.submenu {
+    display: block;
+}*/
+
+.dropdown-childmenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-childmenu {
+    display: none;
+    /*position: absolute;*/
+    /*min-width: 160%;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 15%;
+
+}
+
+  body
+  {
+    margin-left: 12%;
+    margin-right: 12%;
+    background: #183A5B;
+  }
+
+ </style>
+ <body>
+
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"></div>
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="banner/D1.png" height="70" width="70" class="logo" alt=""></a>
+            </div>
+
+             <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+                  <li><a href="index.html#offerings"><span><h5>
+<i class="glyphicon glyphicon-user"></i></span><strong>&nbspCONSUMER SERVICES</strong></h5></a></li>
+                     <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>CONSUMER SERVICES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#offerings">TODAY'S SPECIAL OFFERS</a></li>
+
+        <li class="dropdown-submenu">
+        <a  tabindex="-1" href="#">OTHER OFFERS<span class="caret"></span></a>
+        <ul class="dropdown-childmenu">
+                            <li><a href="grocerytab.html">GROCERY</a></li>
+                            <li><a href="homemadetab.html">HOME-MADE</a></li>
+                            <li><a href="tickettab.html">TICKETING</a></li>
+                            <li><a href="paymenttab.html">PAYMENTS</a></li>
+                            <li><a href="couriertab.html">COURIER</a></li>
+                            <li><a href="topuptab.html">TOP-UP</a></li>
+                        </ul>
+                      </li>
+            </ul>
+<script>
+  $('.dropdown ul li').hover(function() {
+  $(this).children('ul').stop(true,false,true).slideToggle(300);});
+</script>
+
+                      <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> -->
+                   <li><a href="merchantnew.html"><span><h5><i class="glyphicon glyphicon-globe"></i></span><strong>&nbspNETWORK</strong></h5></a></li>
+
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><i class="glyphicon glyphicon-briefcase"></i><strong>&nbspBUSINESSES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enterprisesbusiness.html">ENTERPRISES</a></li>
+                            <li><a href="selfemployment.html">SELF-EMPLOYMENT</a></li>
+                            <li><a href="retailertab.html#retailer">RETAILERS</a></li>
+                            <li><a href="homebasedtab.html">HOME-BASED</a></li>
+                            <li><a href="wholesalertab.html">WHOLESALER</a></li>
+                            <li><a href="servicetab.html">SERVICE PROVIDERS</a></li>
+                            <li><a href="banktab.html">BANKING & FINANCIAL SERVICES</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-pencil"></i></span><b>&nbspSIGN-UP</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-log-in"></i></span><b>&nbspLOG-IN</b></h5></a>
+                    </li>
+                     <li>
+                    <a class="dropdown-toggle" href="gallery.html"><h5><span><i class="glyphicon glyphicon-picture"></i></span><b>&nbspGALLERY</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="navigation.html"><h5><span><i class="glyphicon glyphicon-envelope"></i></span><b>&nbspCONNECT</b></h5></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown">
+                  <h5><span><i class="glyphicon glyphicon-menu-hamburger"></i></span><strong>&nbspCORPORATE</strong></h5></a>
+                  <ul class="dropdown-menu">
+                             <li><a href="aboutus.html#history">HISTORY</a></li>
+                            <li><a href="aboutus.html#platform">PLATFORM</a></li>
+                            <li><a href="aboutus.html#objectives">OBJECTIVES</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-dark bg-dark">
+                    <li>
+                    <a class="dropdown-toggle" onclick="goBack()"><h5><span><i class="glyphicon glyphicon-arrow-left"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="index.html"><h5><span><i class="glyphicon glyphicon-home"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-arrow-right"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" onclick="openSearch()"><h5><span><i class="glyphicon glyphicon-search"  style="color: orange"></i></span><b></b></h5></a>
+                    <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay" style="color:white" >×</span>
+  <div class="overlay-content">
+    <form action="/action_page.html">
+      <input type="text" placeholder="Search.." name="search" style="color: black">
+      <button type="submit" style="background-color: grey"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+                    </li>
+                </ul>
+
+            </div>
+
+     </nav>
+   </div>
+<br>
+<br>
+<br>
+<br>
+
+      <h3 class="text" style="font-family: 'Karla', sans-serif; color: orange; animation-delay: 0s; text-align: center; padding-top: 50px">
+
+      <b><u>Services</b></u></h3>
+
+       <h4 class="text" style="font-family: 'Karla', sans-serif; animation-delay: 0s; color: #d7cec7">
+
+     <p style="padding-top: 20px">Our Doorstep Services Network undertakes Collections towards Loan instalments, Card Dues  in Cash and Cheque</p>
+     <p style="padding-top: 10px">In cases where Cash is collected, we remit the amount to the Principles  Electronically immediately on collection and this eliminate both delays and risks in outsourcing  </p>
+     <p style="padding-top: 10px">As a differentiation and security measure for enhancing Customer comforts, we generate a Dynamic Digital Id per Pick up <span style="color: orange">(Watch The Video)</span></p>
+     <video src="video/dsm.mp4" controls style="max-width:60%; height:auto; margin-left: 20%; padding-top: 3%"></video>
+<!--<div class="embed-responsive embed-responsive-16by9" style="margin-right: 10%; margin-left: 25%;">
+    <video  width="400" controls class="embed-responsive-item" style="width: 80% ; height: 50%">
+        <source src="video/dsm.mp4" type="video/mp4">
+        <source src="video/dsm.ogg" type="video/ogg">
+    </video>
+</div> -->
+
+     <p style="padding-top: 3%">We will be happy to share credentials and business terms  and invite Enterprises to <a style="color: orange" href="signup.html"> Sign up </a> in Expression of Interest</p>
+     </h4>

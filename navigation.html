@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DADSMOM Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link href="animate.css" rel="stylesheet">
+  <link href="css/style1.css" rel="stylesheet" type="text/css">
+  <link href="twentyywenty1/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty1/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+textarea {
+  resize: none;
+}
+.form-label {
+  font-size: 12px;
+  color: #5e9bfc;
+  margin: 0;
+  display: block;
+  opacity: 1;
+  -webkit-transition: .333s ease top, .333s ease opacity;
+  transition: .333s ease top, .333s ease opacity;
+}
+.form-control {
+  border-radius: 0;
+  border-color: #ccc;
+    border-width: 0 0 2px 0;
+    border-style: none none solid none;
+    box-shadow: none;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #5e9bfc;
+}
+.js-hide-label {
+  opacity: 0;
+}
+.js-unhighlight-label {
+  color: #999
+}
+.btn-start-order {
+  background: 0 0 #ffffff;
+    border: 1px solid #2f323a;
+    border-radius: 3px;
+    color: #2f323a;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: inherit;
+    margin: 30px 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    transition: all 0.25s ease 0s;
+}
+.btn-start-order:hover,.btn-start-order:active, .btn-start-order:focus {
+  border-color: #5e9bfc;
+  color: #5e9bfc;
+}
+.navbar-fixed-top{
+    min-height: 70px;
+
+}
+.navbar-collapse{
+    padding-top: 3px;
+}
+
+nav.navbar ul li > ul {
+  background:#B0BEC5;
+  box-shadow: none;
+}
+
+.navbar-right
+{
+  float: right!important;
+  padding-right: 20px;
+}
+h5
+{
+  font-size: 12px;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 30px;
+    margin: auto;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    cursor: pointer;
+    color: white;
+}
+
+.overlay .closebtn:hover {
+    color: #ccc;
+}
+
+.overlay input[type=text] {
+    padding: 15px;
+    font-size: 17px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.overlay input[type=text]:hover {
+    background: #f1f1f1;
+}
+
+.overlay button {
+    float: left;
+    width: 20%;
+    padding: 15px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
+
+.overlay button:hover {
+    background: #bbb;
+}
+
+
+.button {
+    background-color: orange; /* orange */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+
+/*ul li:hover{
+  background:orange;
+}*/
+
+form{
+  height: 15px;
+}
+
+.form_main h4 {
+    font-family: roboto;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+.heading {
+
+    padding-bottom: 9px;
+    position: relative;
+}
+.heading span {
+    background: none repeat scroll 0 0;
+    bottom: -2px;
+    height: 3px;
+    left: 0;
+    position: absolute;
+    width: 75px;
+}
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+.txt[type="text"] {
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt_3[type="text"] {
+    margin: 10px 0 0;
+    padding: 10px 0 10px 5px;
+    width: 100%;
+}
+.txt2[type="submit"] {
+    background: #242424 none repeat scroll 0 0;
+    border: 1px solid #4f5c04;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 16px;
+    font-style: normal;
+    line-height: 35px;
+    margin: 10px 0;
+    padding: 0;
+    text-transform: uppercase;
+    width: 30%;
+}
+.txt2:hover {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    color: #5793ef;
+    transition: all 0.5s ease 0s;
+}
+body {
+    background: #183A5B;
+}
+.footer {
+   /*position: fixed;*/
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 40px;
+   background-color: #242424;
+   color: white;
+   text-align: center;
+ }
+
+
+/*.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+}*/
+
+
+.dropdown-menu a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-menu {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/*ul.submenu {
+    display: none;
+}
+
+li:hover ul.submenu {
+    display: block;
+}*/
+
+.dropdown-childmenu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-childmenu {
+    display: none;
+    /*position: absolute;*/
+    /*min-width: 160%;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 15%;
+
+}
+
+
+
+</style>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container"></div>
+            <div class="navbar-header" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="banner/D1.png" height="70" width="70" class="logo" alt=""></a>
+            </div>
+
+             <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-left navbar-dark bg-dark">
+                     <li><a href="index.html#offerings"><span><h5><i class="glyphicon glyphicon-user"></i></span><strong>&nbspCONSUMER SERVICES</strong></h5></a></li>
+                     <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><strong>CONSUMER SERVICES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#offerings">TODAY'S SPECIAL OFFERS</a></li>
+
+        <li class="dropdown-submenu">
+        <a  tabindex="-1" href="#">OTHER OFFERS<span class="caret"></span></a>
+        <ul class="dropdown-childmenu">
+                            <li><a href="grocerytab.html">GROCERY</a></li>
+                            <li><a href="homemadetab.html">HOME-MADE</a></li>
+                            <li><a href="tickettab.html">TICKETING</a></li>
+                            <li><a href="paymenttab.html">PAYMENTS</a></li>
+                            <li><a href="couriertab.html">COURIER</a></li>
+                            <li><a href="topuptab.html">TOP-UP</a></li>
+                        </ul>
+                      </li>
+            </ul>
+<script>
+  $('.dropdown ul li').hover(function() {
+  $(this).children('ul').stop(true,false,true).slideToggle(300);});
+</script>
+
+                      <script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script> -->
+                   <li><a href="merchantnew.html"><span><h5><i class="glyphicon glyphicon-globe"></i></span><strong>&nbspNETWORK</strong></h5></a></li>
+
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href=""><h5><i class="glyphicon glyphicon-briefcase"></i><strong>&nbspBUSINESSES</strong><span class="caret"></h5></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="enterprisesbusiness.html">ENTERPRISES</a></li>
+                            <li><a href="selfemployment.html">SELF-EMPLOYMENT</a></li>
+                            <li><a href="retailertab.html#retailer">RETAILERS</a></li>
+                            <li><a href="homebasedtab.html">HOME-BASED</a></li>
+                            <li><a href="wholesalertab.html">WHOLESALER</a></li>
+                            <li><a href="servicetab.html">SERVICE PROVIDERS</a></li>
+                            <li><a href="banktab.html">BANKING & FINANCIAL SERVICES</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                    <a class="dropdown-toggle" href="signup.html"><h5><span><i class="glyphicon glyphicon-pencil"></i></span><b>&nbspSIGN-UP</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="login.html"><h5><span><i class="glyphicon glyphicon-log-in"></i></span><b>&nbspLOG-IN</b></h5></a>
+                    </li>
+                     <li>
+                    <a class="dropdown-toggle" href="gallery.html"><h5><span><i class="glyphicon glyphicon-picture"></i></span><b>&nbspGALLERY</b></h5></a>
+                    </li>
+                    <li>
+                    <a class="nav-link" href="navigation.html"><h5><span><i class="glyphicon glyphicon-envelope"></i></span><b>&nbspCONNECT</b></h5></a>
+                    </li>
+                    <li class="dropdown">
+                      <a href="aboutus.html" class="dropdown-toggle" data-toggle="dropdown">
+                  <h5><span><i class="glyphicon glyphicon-menu-hamburger"></i></span><strong>&nbspCORPORATE</strong></h5></a>
+                  <ul class="dropdown-menu">
+                             <li><a href="aboutus.html#history">HISTORY</a></li>
+                            <li><a href="aboutus.html#platform">PLATFORM</a></li>
+                            <li><a href="aboutus.html#objectives">OBJECTIVES</a></li>
+                        </ul>
+                    </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right navbar-dark bg-dark">
+                    <li>
+                    <a class="dropdown-toggle" onclick="goBack()"><h5><span><i class="glyphicon glyphicon-arrow-left"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="index.html"><h5><span><i class="glyphicon glyphicon-home"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" href="aboutus.html"><h5><span><i class="glyphicon glyphicon-arrow-right"  style="color: orange"></i></span><b></b></h5></a>
+                    </li>
+                    <li>
+                    <a class="dropdown-toggle" onclick="openSearch()"><h5><span><i class="glyphicon glyphicon-search"  style="color: orange"></i></span><b></b></h5></a>
+                    <div id="myOverlay" class="overlay">
+  <span class="closebtn" onclick="closeSearch()" title="Close Overlay" style="color:white" >×</span>
+  <div class="overlay-content">
+    <form action="/action_page.html">
+      <input type="text" placeholder="Search.." name="search" style="color: black">
+      <button type="submit" style="background-color: grey"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+                    </li>
+                </ul>
+
+            </div>
+
+     </nav>
+
+
+      <p><iframe width="100%" height="550" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.802553045335!2d72.85506731533607!3d19.11631598706478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c86e0ed732cb%3A0xde81900d9076d1cf!2sUPASS!5e0!3m2!1sen!2sin!4v1526892711658" width="1300" height="300" frameborder="0" style="border:0; margin-top: 70px" allowfullscreen></iframe></p>
+
+
+      <div class="container">
+          <div class="row">
+              <div class="topnav" id="myTopnav">
+            <div class="col-xs-8"><br>
+              <p class="lead" style="color: white">We welcome calls from Retailers and Self-employment seekers who wish to be part of the eco-system that will change the Retail Tarde and Services
+                              Please feel free to contact via mail<br><br></p>
+                            <p style="color: white; font-size:18px;"><b>Click On Link -</b> <a href="mailto:response@dadsmom.in?subject=Retailer/Self-employment seeker&body=My body here."><b>response@dadsmom.in</b> </a> or call on <strong>1800220758</strong> (Toll Free) / <strong>8108981089</strong></p>
+
+
+                               <!--   <p style="color: white; font-size: 20px; width: 50px"><b>Click On Link -</b> <a href="mailto:response@dadsmom.in?subject=Retailer/Self-employment seeker&body=My body here.">
+                                  <b>response@dadsmom.in</b> </a> </p>
+                                            <p>OR</p>
+                                  <p>call on <strong>1800220758</strong> (Toll Free) / <strong>8108981089</strong></p> -->
+           <!--<div class="form_main"> https://form.jotform.me/82351399668471
+                        <h4 class="heading"style="color: coral;"> <span>Contact</span></h4><br>
+                        <div class="form">
+                        <form action="#" method="post" id="contactFrm" name="contactFrm">
+                            <input type="text" required="" placeholder=" Name" value="" name="name" class="txt">
+                            <input type="text" required="" placeholder=" mobile No" value="" name="mob" class="txt">
+                            <input type="text" required="" placeholder=" Email" value="" name="email" class="txt">
+
+                           <textarea placeholder="Message" name="mess" type="text" class="txt_3" style="font-family: Arial, Helvetica, sans-serif"></textarea>
+
+                           <input type="submit" value="submit" name="submit" class="txt2">
+                           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                              <i class="fa fa-bars"></i>
+                            </a>
+
+                        </form>
+                    </div>
+                    </div>-->
+                  </div>
+                </div>
+          </div>
+        </div>
+<div class="footer">
+<p class="m-0 text-center text-white"><h4 style="color:coral; padding-top: 10px">Powerd by :<a href="http://upass.cc/"> (UPASS)  <!--</a><img src="Facebook.png" height="20"width="20"></span> <img src="Instagram.png" height="20"width="20">  <img url="http://dadsmom.in/folder/WhatsApp.png" height="20"width="20"> <img src="Twitter.png" height="20"width="20">--> </h4>
+</p>
+</div>
+<script>
+function openSearch() {
+    document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+</body>
+</html>
